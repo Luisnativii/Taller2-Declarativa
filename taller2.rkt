@@ -87,6 +87,17 @@
 
 
 
+;; Ejercicio 7 – Calcular la suma acumulada de una lista
+;; Objetivo: Reforzar el uso de foldl para crear acumuladores personalizados.
+
+(define (suma-acumulada lista)
+  (reverse (foldl (lambda (x acc) (cons (+ x (if (null? acc) 0 (car acc))) acc)) '() lista)))
+
+;; Ejemplo de uso:
+(displayln (suma-acumulada '(1 2 3 4)))  ;; Debería retornar '(1 3 6 10)
+
+
+
 ;; Ejercicio 8 – Concatenar cadenas de texto en una lista
 ;; Objetivo: Practicar foldl con operaciones sobre cadenas.
 
